@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<movable-area>
+	<!-- 设置header和footer只是为让页面滚动起来 -->
+	<view class="header font">Header</view>
+	<view class="body">
+		<!-- 第一组图片 -->
+		<view>
+			<view style="padding: 20rpx">第一组图片</view>
+			<view class="files-view">
+				<view wx:for="{{ files }}" wx:key="index" class="image-view img-view" bindlongpress="onLongtap" bindtouchstart="touchs" bindtouchend="touchend" catchtouchmove="touchm" data-index='{{index}}' data-key="img">
+					<image class="img" src="{{ item }}" mode="aspectFill" style="width:{{imgWidth}}px;height:{{imgWidth}}px;" bindtap="onPreview" data-id="{{ item }}" data-key="img"></image>
+					<image class="img-delete1" src="/assets/images/delete-icon1.png" catchtap="onDelete" data-key="img" data-index="{{index}}"></image>
+				</view>
+				<image style="width:{{imgWidth}}px;height:{{imgWidth}}px;" src='/assets/images/add-upload.png' bindtap="onChooseImage" data-key="img"></image>
+			</view>
+		</view>
+		<!-- 第二组图片 -->
+		<view>
+			<view style="padding: 20rpx">第二组图片</view>
+			<view class="files-view">
+				<view wx:for="{{ files1 }}" wx:key="index" class="image1-view img-view" bindlongpress="onLongtap" bindtouchstart="touchs" bindtouchend="touchend" catchtouchmove="touchm" data-index='{{index}}' data-key="img1">
+					<image class="img" src="{{ item }}" mode="aspectFill" style="width:{{imgWidth}}px;height:{{imgWidth}}px;" bindtap="onPreview" data-id="{{ item }}" data-key="img1"></image>
+					<image class="img-delete1" src="/assets/images/delete-icon1.png" catchtap="onDelete" data-key="img1" data-index="{{index}}"></image>
+				</view>
+				<image style="width:{{imgWidth}}px;height:{{imgWidth}}px;" src='/assets/images/add-upload.png' bindtap="onChooseImage" data-key="img1"></image>
+			</view>
+		</view>
+		<!-- 第三组图片 -->
+		<view>
+			<view style="padding: 20rpx">第三组图片</view>
+			<view class="" wx:for="{{ files2 }}" wx:key="index">
+				<view wx:if="{{ index > 0 }}" style="text-align: center;color:#999;">——————我是分割线——————</view>
+				<view class="files-view">
+					<view wx:for="{{ files2[index] }}" wx:for-item="itm" wx:for-index="idx" wx:key="idx" class="image2-view-{{index}} img-view" bindlongpress="onLongtap" bindtouchstart="touchs" bindtouchend="touchend" catchtouchmove="touchm" data-index='{{idx}}' data-key="img2" data-itemindex="{{index}}">
+						<image class="img" src="{{ itm }}" mode="aspectFill" style="width:{{imgWidth}}px;height:{{imgWidth}}px;" bindtap="onPreview" data-id="{{ itm }}" data-key="img2" data-itemindex="{{index}}"></image>
+						<image class="img-delete1" src="/assets/images/delete-icon1.png" catchtap="onDelete" data-key="img2" data-index="{{idx}}" data-itemindex="{{index}}"></image>
+					</view>
+					<image style="width:{{imgWidth}}px;height:{{imgWidth}}px;" src='/assets/images/add-upload.png' bindtap="onChooseImage" data-key="img2" data-itemindex="{{index}}"></image>
+				</view>
+			</view>
+			<view class="btn-view">
+				<button class="btn" type="primary" bindtap="onChooseImage" data-key="img2">上传图片</button>
+			</view>
+
+		</view>
+	</view>
+	<view class="footer font">Footer</view>
+
+	<movable-view x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}" disabled="{{disabled}}">
+		<!-- <block wx:if="{{ moveKey === 'main-img' }}">
+			<view class='item-move' hidden='{{hidden}}'>
+				<image src="{{ moveImgUrl }}" mode="aspectFill"></image>
+			</view>
+		</block>
+		<block wx:else> -->
+		<view class='item-move' style="width:{{imgWidth}}px !important;height:{{imgWidth}}px !important;" hidden='{{hidden}}'>
+			<image src="{{ moveImgUrl }}" mode="aspectFill"></image>
+		</view>
+		<!-- </block> -->
+	</movable-view>
+</movable-area>

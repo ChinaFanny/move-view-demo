@@ -1,0 +1,95 @@
+/**index.wxss**/
+.header {
+  width: 100%;
+  background-color: greenyellow;
+  height: 600rpx;
+  line-height: 600rpx;
+  color: brown;
+}
+
+.footer {
+  width: 100%;
+  background-color: red;
+  height: 600rpx;
+  line-height: 600rpx;
+  color: white;
+}
+
+.font {
+  font-size: 60rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.files-view {
+  /* margin: 0 0 20rpx; */
+  padding-left: 10rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.files-view image {
+  /* height: 120rpx;
+  width: 120rpx; */
+  overflow: hidden;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.img-view {
+  position: relative;
+}
+
+.img-delete-view {
+  height: 100rpx;
+  width: 100rpx;
+  background-color: rgba(0, 0, 0, 0.329);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.img-delete {
+  height: 50rpx !important;
+  width: 50rpx !important;
+}
+
+.img-delete1 {
+  height: 50rpx;
+  width: 50rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.btn-view {
+  padding: 20rpx;
+}
+.btn {
+  width: 100% !important;
+}
+
+/* movable-area和movable-view样式 */
+
+/* movable-area 必须设置width和height属性，不设置默认为10px */
+movable-area {
+  height: 100%;
+  width: 100%;
+}
+
+.item-move {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.item-move image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
